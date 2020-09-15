@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "74a288e6-306a-48e7-9180-b91fb030ab0f",
+		"name": "sm-service-file-manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CardImage",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9955/cardimage?entityid=d17e784f-f5f7-4bc8-ad34-3170bc735fc7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9955",
+					"path": [
+						"cardimage"
+					],
+					"query": [
+						{
+							"key": "entityid",
+							"value": "d17e784f-f5f7-4bc8-ad34-3170bc735fc7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CardImageBatch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                    \"cards\": [\n                        {\n                            \"entityid\": \"d17e784f-f5f7-4bc8-ad34-3170bc735fc7\"\n                        },\n                        {\n                            \"entityid\": \"73e8c510-34f3-4fc0-94de-d05d227e1f56\"\n                        }\n                    ]\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:9955/cardimagebatch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9955",
+					"path": [
+						"cardimagebatch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdvertisementImages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9955/advertisementimages?advertisementid=d17e784f-f5f7-4bc8-ad34-3170bc735fc7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9955",
+					"path": [
+						"advertisementimages"
+					],
+					"query": [
+						{
+							"key": "advertisementid",
+							"value": "d17e784f-f5f7-4bc8-ad34-3170bc735fc7"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7f93fa12-9819-4f4f-887d-c547ff7ba8c3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6ef7381f-b829-472e-9acc-111b751b74d9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "87550d69-a6dd-4bc8-b3ca-9ccb44d1cf80",
+			"key": "IpAddress",
+			"value": "localhost"
+		},
+		{
+			"id": "63d2e68b-cfba-4944-93b6-f7266f8ae037",
+			"key": "FilePort",
+			"value": "9955"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

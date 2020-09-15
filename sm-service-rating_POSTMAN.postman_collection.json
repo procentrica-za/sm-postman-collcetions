@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "19501211-9625-44e4-9922-a9a255ea9dd5",
+		"name": "sm-service-rating_POSTMAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "StartBuyerRating",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\n    \"advertisementid\" : \"d17e784f-f5f7-4bc8-ad34-3170bc735fc7\",\n    \"buyerid\" : \"56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7\",\n\t\"sellerid\" : \"7bb9d62d-c3fa-4e63-9f07-061f6226cebb\",\n\t\"buyerrating\" : \"3\",\n\t\"buyercomments\" : \"Took very long to respond and took over a month to pay me.\"\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{RatingPort}}/rate",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{RatingPort}}",
+					"path": [
+						"rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RateSeller",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"ratingid\" : \"281ad8f3-b2ee-4d10-9c17-8e17da573c6c\",\n\t\"sellerrating\" : \"1\",\n\t\"sellercomments\" : \"Amazing person who bought I boight from\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{RatingPort}}/rate",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{RatingPort}}",
+					"path": [
+						"rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOutstandingRatings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{RatingPort}}/rate?userid={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{RatingPort}}",
+					"path": [
+						"rate"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSellerRatings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{RatingPort}}/sellerrating?userid={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{RatingPort}}",
+					"path": [
+						"sellerrating"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBuyerRatings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{RatingPort}}/buyerrating?userid={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{RatingPort}}",
+					"path": [
+						"buyerrating"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInterestedBuyers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userid\" : \"7bb9d62d-c3fa-4e63-9f07-061f6226cebb\",\n\t\"advertisementid\" : \"b81d3ef5-9bf9-4f60-bd28-5404c647bab4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{RatingPort}}/interest",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{RatingPort}}",
+					"path": [
+						"interest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRatingstodo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{RatingPort}}/rating?userid={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{RatingPort}}",
+					"path": [
+						"rating"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuyingAverage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{RatingPort}}/buyer?userid={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{RatingPort}}",
+					"path": [
+						"buyer"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SellingAverage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{RatingPort}}/seller?userid={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{RatingPort}}",
+					"path": [
+						"seller"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "24c6a0bb-5085-4ae5-bee4-a5b621f2b4a7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8fe1acdf-4ca3-42a1-92aa-f8aec74b1783",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "635c42bc-817c-4dbc-9894-e47970934e41",
+			"key": "IpAddress",
+			"value": "localhost"
+		},
+		{
+			"id": "8a9450a4-88f6-4f10-99fd-8268c7c024b7",
+			"key": "RatingPort",
+			"value": "9957"
+		},
+		{
+			"id": "54b4d6e8-b5cf-4106-9652-7c3d37e24037",
+			"key": "SellerID",
+			"value": ""
+		},
+		{
+			"id": "b1668c24-914a-428c-882d-66313b012fbb",
+			"key": "BuyerID",
+			"value": ""
+		},
+		{
+			"id": "50f5d552-1d11-4e12-8f94-cd7a00fc219c",
+			"key": "AdvertisementID",
+			"value": ""
+		},
+		{
+			"id": "aa5e8bed-1dc3-4806-9a61-24f6c40314ff",
+			"key": "UserID",
+			"value": "7bb9d62d-c3fa-4e63-9f07-061f6226cebb"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

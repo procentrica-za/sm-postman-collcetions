@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "f0c32334-e142-4335-9400-160d7793b4de",
+		"name": "sm-service-user-manager_POSTMAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"Jonathan\",\n\t\"password\" : \"123456\",\n\t\"name\" : \"Jonathan\",\n\t\"surname\" : \"Wakefield\",\n\t\"email\" : \"jonny@gmail.com\",\n\t\"institutionname\" : \"University of Johannesburg\"\n}"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/user",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"user"
+					]
+				},
+				"description": "THis request is to register a user."
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/user?id={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\" : \"a7abc610-0547-43e9-aae2-503671f15456\",\n\t\"scimid\" : \"f74914ab-14c7-4470-a012-7c59641402a5\",\n\t\"username\" : \"jmaster98\",\n\t\"name\" : \"jo\",\n\t\"surname\" : \"govender\",\n\t\"email\" : \"John.Smit@gmail.com\",\n\t\"institutionname\" : \"University of Pretoria\"\n}\n\n",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/user",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"user"
+					]
+				},
+				"description": "This reqquest is to Update a user"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/user?id={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{UserID}}"
+						}
+					]
+				},
+				"description": "Deletes a user from the DB based on their ID"
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/userlogin?username={{Username}}&password={{Password}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"userlogin"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "{{Username}}"
+						},
+						{
+							"key": "password",
+							"value": "{{Password}}"
+						}
+					]
+				},
+				"description": "THis request is for a user to log in to the system"
+			},
+			"response": []
+		},
+		{
+			"name": "ForgotPassword",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/forgotpassword?email={{UserEmail}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"forgotpassword"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{UserEmail}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updatepassword",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\" : \"56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7\",\n\t\"currentpassword\" : \"123456\",\n\t\"password\" : \"1234567\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/userpassword",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"userpassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInstitutions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/institution",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"institution"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOTP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/otp?userid={{UserID}}&&phonenumber={{PhoneNumber}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"otp"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{UserID}}"
+						},
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "phonenumber",
+							"value": "{{PhoneNumber}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidateOTP",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"userid\" : \"56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7\",\n    \"otp\" : \"83582\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/otp",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNewOTP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/newotp?userid={{UserID}}&&phonenumber={{PhoneNumber}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"newotp"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{UserID}}"
+						},
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "phonenumber",
+							"value": "{{PhoneNumber}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerificationStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/status?userid={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"status"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOldPassword",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{UserPort}}/password?email={{UserEmail}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{UserPort}}",
+					"path": [
+						"password"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{UserEmail}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0cfe6a55-933f-4bf6-99c4-42f8696ebcf5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0ad08bad-256c-4bb6-aaa0-0a6ae2e89657",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "285961bc-ecc0-42d6-91e3-03284eb611e7",
+			"key": "IpAddress",
+			"value": "localhost"
+		},
+		{
+			"id": "55e8069c-eb75-47a4-9b32-30867eb6a6ee",
+			"key": "UserPort",
+			"value": "9952"
+		},
+		{
+			"id": "0a30e2d0-aa44-441b-9ab2-975acb0bfce6",
+			"key": "Username",
+			"value": ""
+		},
+		{
+			"id": "229efb1f-d587-47a1-a984-e5a49e387984",
+			"key": "Password",
+			"value": ""
+		},
+		{
+			"id": "28d9a0ef-fcd4-46b1-b3c4-4253e9b5dfba",
+			"key": "UserID",
+			"value": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+		},
+		{
+			"id": "866cdb1f-d44a-4ebb-beb1-6c503aa51e3c",
+			"key": "UserEmail",
+			"value": "Gerard.Botes@gmail.com"
+		},
+		{
+			"id": "9eb08465-0f09-48ae-8bb1-f27f92da7ce9",
+			"key": "PhoneNumber",
+			"value": "27824413098"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

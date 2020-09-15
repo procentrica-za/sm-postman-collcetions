@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "ba539bab-5f97-494e-b234-c6e778c856e2",
+		"name": "sm-service-SCIM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"Jake\",\n\t\"password\" : \"1234567\",\n\t\"name\" : \"Jake\",\n\t\"surname\" : \"Botes\",\n\t\"email\" : \"jake@gmail.com\",\n\t\"institutionname\" : \"University of Johannesburg\",\n\t\"keysecret\" : \"aG41Tmt0dHhlelB4MWNKZTN4ZUkwV3pLNGZZYTp5bGZMRjFqUFZzVllqcjIxdkdDWnNQY3kzYU1h\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{SCIMPort}}/user",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{SCIMPort}}",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\" : \"a7abc610-0547-43e9-aae2-503671f15456\",\n\t\"scimid\" : \"f74914ab-14c7-4470-a012-7c59641402a5\",\n\t\"username\" : \"jmaster98\",\n\t\"name\" : \"jmaster\",\n\t\"surname\" : \"govender\",\n\t\"email\" : \"jmaster123@gmail.com\",\n\t\"institutionname\" : \"University of Pretoria\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{SCIMPort}}/user",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{SCIMPort}}",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"Henry\",\n\t\"password\" : \"1234567\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{SCIMPort}}/login",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{SCIMPort}}",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangePassword",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\" : \"16813217-6b68-448c-b2f2-aaabb2c3fc80\",\n\t\"scimid\" : \"50da3276-d30f-4737-9b48-b93f56d773a5\",\n\t\"username\" : \"franky\",\n\t\"currentpassword\" : \"1234567\",\n\t\"password\" : \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{SCIMPort}}/userpassword",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{SCIMPort}}",
+					"path": [
+						"userpassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ForgotPassword",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{SCIMPort}}/forgotpassword?email={{Email}}&&scimid={{ScimID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{SCIMPort}}",
+					"path": [
+						"forgotpassword"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{Email}}"
+						},
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "scimid",
+							"value": "{{ScimID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSCIM ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"Jake\",\n\t\"keysecret\" : \"TWVCRDYzSHNwb0tsWm9yX3d6X3RkRUpXZWV3YTpTQ040UEQwWXpjb3g2ZnltQ2k0MWVUMkVrSDRh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{SCIMPort}}/scim",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{SCIMPort}}",
+					"path": [
+						"scim"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f07b7547-3be4-459a-bc8c-2bd29a4f96ba",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6fade5de-89fe-4f3e-b4ac-a2da41cddd65",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "1e563bc1-1352-441f-843b-eec2d236844c",
+			"key": "IpAddress",
+			"value": "localhost"
+		},
+		{
+			"id": "e84da30b-7ae5-418c-811d-cf29ad5258e0",
+			"key": "SCIMPort",
+			"value": "9961"
+		},
+		{
+			"id": "4780f413-0bae-4c77-a560-503fe6d08ec5",
+			"key": "Username",
+			"value": "admin"
+		},
+		{
+			"id": "4449f925-69ab-4bb1-b262-f974c552804a",
+			"key": "Password",
+			"value": "admin"
+		},
+		{
+			"id": "f274293c-a432-4c88-bae9-042466adc0bb",
+			"key": "Email",
+			"value": "Gerard.Botes@gmail.com"
+		},
+		{
+			"id": "3d233499-88f0-4495-8b26-5a6d3c514804",
+			"key": "ScimID",
+			"value": "50da3276-d30f-4737-9b48-b93f56d773a5"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

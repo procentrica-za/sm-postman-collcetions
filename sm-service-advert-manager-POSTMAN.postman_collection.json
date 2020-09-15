@@ -1,0 +1,548 @@
+{
+	"info": {
+		"_postman_id": "e473ed3a-056c-45f3-9375-52a1b739e4ef",
+		"name": "sm-service-advert-manager-POSTMAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostAdvertisement",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userid\": \"56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7\",\n    \"isselling\" : \"true\",\n    \"advertisementtype\": \"TXB\",\n    \"entityid\": \"382e4fbb-5b63-4a1a-b3ee-162e256e861b\",\n    \"price\": \"400\",\n    \"description\": \"Add Postman test\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{IpAddress}}:{{AdvertPort}}/advertisement",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"advertisement"
+					]
+				},
+				"description": "THis request is to post a new advertisement on the app"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdvertisementByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/advertisement?id={{AdvertID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"advertisement"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{AdvertID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAdvertisement",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\" : {{AdvertID}},\n\t\"userid\": \"56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7\",\n\t\"isselling\" : \"true\",\n    \"advertisementtype\": \"TXE\",\n    \"entityid\": \"900c4507-cf65-4036-a0b4-2af7e5cf98c1\",\n    \"price\": \"550\",\n    \"description\": \"AddpostmanTest\"\n}\n\t\n"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/advertisement",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"advertisement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAdvertisement",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/advertisement?id={{AdvertID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"advertisement"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{AdvertID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdvertByType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/advertisementtype?adverttype={{AdType}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"advertisementtype"
+					],
+					"query": [
+						{
+							"key": "adverttype",
+							"value": "{{AdType}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllAdvertisements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/advertisements",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"advertisements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAdvertisementsByUserID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/useradvertisements?id={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"useradvertisements"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdvertByUserID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/useradvertisements?id={{UserID}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"useradvertisements"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{UserID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdvertByPostType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/advertisementposttype?advertposttype={{AdPostType}}",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"advertisementposttype"
+					],
+					"query": [
+						{
+							"key": "advertposttype",
+							"value": "{{AdPostType}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTextbook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"modulecode\": \"\",\n    \"name\": \"\",\n    \"edition\": \"\",\n    \"quality\": \"\",\n    \"author\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/textbook",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"textbook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTextbooksByFilter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"modulecode\": \"\",\n    \"name\": \"\",\n    \"edition\": \"\",\n    \"quality\": \"\",\n    \"author\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/textbooks",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"textbooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTutor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"modulecode\": \"\",\n    \"subject\": \"\",\n    \"yearcompleted\": \"\",\n    \"venue\": \"\",\n    \"notesincluded\": \"\",\n    \"terms\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/tutor",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"tutor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTutorsByFilter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"modulecode\": \"\",\n    \"subject\": \"\",\n    \"yearcompleted\": \"\",\n    \"venue\": \"\",\n    \"notesincluded\": \"\",\n    \"terms\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/tutors",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"tutors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"modulecode\" : \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/note",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNotesByFilter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"modulecode\" : \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/notes",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddAccomodation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accomodationtypecode\": \"\",\n    \"institutionname\": \"\",\n    \"location\": \"\",\n    \"distancetocampus\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/accomodation",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"accomodation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAccomodationByFilter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accomodationtypecode\": \"\",\n    \"institutionname\": \"\",\n    \"location\": \"\",\n    \"distancetocampus\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{IpAddress}}:{{AdvertPort}}/accomodations",
+					"protocol": "http",
+					"host": [
+						"{{IpAddress}}"
+					],
+					"port": "{{AdvertPort}}",
+					"path": [
+						"accomodations"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f7fb9f16-da14-4845-aa3c-bbc414589887",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "99ee4b10-f818-4978-aa2d-82360cd7bfdc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e2c8f24c-7ef7-4db7-8af9-21d2ff7e961a",
+			"key": "IpAddress",
+			"value": "localhost"
+		},
+		{
+			"id": "e43ec7b3-6115-421a-9649-daaec4b131e5",
+			"key": "AdvertPort",
+			"value": "9953"
+		},
+		{
+			"id": "2b5b9bdd-d080-49ac-a415-f48b8d2a4c8b",
+			"key": "AdvertID",
+			"value": ""
+		},
+		{
+			"id": "a93c2197-36fb-4bcc-bc68-2af18932e62e",
+			"key": "UserID",
+			"value": "56c27ab0-eed7-4aa5-8b0a-e4082c83c3b7"
+		},
+		{
+			"id": "40555b64-9e56-4be1-84cf-2c04782742b7",
+			"key": "AdType",
+			"value": "TXB"
+		},
+		{
+			"id": "194f92b3-5f4e-4214-a922-73a279a119f0",
+			"key": "AdPostType",
+			"value": "true"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
